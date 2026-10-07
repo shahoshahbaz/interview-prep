@@ -1,0 +1,56 @@
+### Get all books
+GET http://localhost:8080/api/v1/books
+
+### Get all books by genre
+GET http://localhost:8080/api/v1/books?genre=Tech
+
+### Get jpaBook by ID
+GET http://localhost:8080/api/v1/books/1
+
+### Get books by author
+GET http://localhost:8080/api/v1/books/author/Robert Martin
+
+### Create a jpaBook
+POST http://localhost:8080/api/v1/books
+Content-Type: application/json
+
+{
+  "title": "Spring Boot in Action",
+  "author": "Craig Walls",
+  "genre": "Tech",
+  "pages": 264,
+  "price": 39.99
+}
+
+### Update a jpaBook
+PUT http://localhost:8080/api/v1/books/1
+Content-Type: application/json
+
+{
+  "title": "Clean Code Updated",
+  "author": "Robert Martin",
+  "genre": "Tech",
+  "pages": 431,
+  "price": 38.99
+}
+
+### Patch title
+PATCH http://localhost:8080/api/v1/books/1/title?newTitle=Clean Code 2nd Edition
+
+### Publish a jpaBook
+POST http://localhost:8080/api/v1/books/5/publish
+
+### Delete a jpaBook
+DELETE http://localhost:8080/api/v1/books/1
+
+### Test validation error
+POST http://localhost:8080/api/v1/books
+Content-Type: application/json
+
+{
+  "title": "",
+  "author": ""
+}
+
+### Test not found
+GET http://localhost:8080/api/v1/books/999

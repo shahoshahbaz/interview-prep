@@ -1,0 +1,4 @@
+Functional interfaces are interfaces in Java that have exactly one abstract method.
+They can have any number of default or static methods, but only one abstract method.
+Functional interfaces are used as the basis for lambda expressions, method references,
+and other functional programming constructs in Java.
